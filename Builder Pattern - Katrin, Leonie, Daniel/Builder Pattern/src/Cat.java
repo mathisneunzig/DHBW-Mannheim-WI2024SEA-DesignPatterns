@@ -6,7 +6,6 @@ public class Cat {
     private int age;
     private CatPersonality personality;
 
-
     //private Cat(){}
 
     public static class CatBuilder{
