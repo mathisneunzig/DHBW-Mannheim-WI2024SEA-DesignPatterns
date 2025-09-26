@@ -4,7 +4,7 @@ public class ShapeAreaCalculator implements ShapeVisitor {
 
   @Override
   public void visit(Circle circle) {
-    double area = circle.getRadius() * Math.PI;
+    double area = circle.getRadius() * circle.getRadius() * Math.PI;
     System.out.println("Area: " + area);
   }
 

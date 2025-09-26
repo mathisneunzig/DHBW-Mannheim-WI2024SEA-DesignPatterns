@@ -7,11 +7,13 @@ public class Main {
       new Circle(5)
     };
     
-    ShapeAreaCalculator sh = new ShapeAreaCalculator();
+    ShapeAreaCalculator shapeAreaCalculator = new ShapeAreaCalculator();
+
+    ShapePerimeterCalculator shapePerimeterCalculator = new ShapePerimeterCalculator();
 
     for (Shape shape : shapes) {
-      shape.accept(sh);
+      shape.accept(shapeAreaCalculator);
+      shape.accept(shapePerimeterCalculator);
     }
-    
   }
 }
