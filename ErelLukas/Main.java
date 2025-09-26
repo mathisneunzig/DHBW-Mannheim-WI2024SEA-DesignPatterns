@@ -2,9 +2,16 @@ package ErelLukas;
 
 public class Main {
   public static void main(String[] args) {
-    Square square = new Square(10);
-
+    Shape[] shapes = {
+      new Square(10),
+      new Circle(5)
+    };
+    
     ShapeAreaCalculator sh = new ShapeAreaCalculator();
-    square.accept(sh);
+
+    for (Shape shape : shapes) {
+      shape.accept(sh);
+    }
+    
   }
 }
