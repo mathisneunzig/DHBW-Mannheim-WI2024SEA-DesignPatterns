@@ -1,2 +1,2 @@
-public class CatRun {
+public class Main {
 }
