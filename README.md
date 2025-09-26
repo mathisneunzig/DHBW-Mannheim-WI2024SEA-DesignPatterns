@@ -1,13 +1,13 @@
-# Designpatterns Aufgabe
+# Design Pattern Aufgabe
 
 ## Ziel der Aufgabe
-Du implementierst zu zweit ein Designpattern und entwickelst ein Plakat oder einen OnePager dazu. 
+Du implementierst zu zweit ein Design Pattern und entwickelst ein Plakat oder einen OnePager dazu. 
 
 ## Abgabe
 Die Abgabe erfolgt bis zum 16.10.2025 um 20:00 als Pull-Request an diesem GitHub-Repository
 
 ## Anforderungen
-Code: Funktionierendes, lauffähiges Beispiel eines Designpatterns. In der README.md bitte angeben, wie man die Anwendung startet.
+Code: Funktionierendes, lauffähiges Beispiel des Patterns. In der README.md bitte angeben, wie man die Anwendung startet.
 
 OnePager/Plakat:
 - Steckbrief (Name, Art, etc.)
