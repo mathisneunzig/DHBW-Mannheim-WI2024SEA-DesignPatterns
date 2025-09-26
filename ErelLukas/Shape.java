@@ -1,5 +1,5 @@
 package ErelLukas;
 
 interface Shape {
-  void accept(Visitor visitor);
+  void accept(ShapeVisitor visitor);
 }
