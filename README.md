@@ -1,4 +1,4 @@
-# Design Pattern Aufgabe
+# Design Pattern Aufgabe (5 Punkte)
 
 ## Ziel der Aufgabe
 Du implementierst zu zweit ein Design Pattern und entwickelst ein Plakat oder einen OnePager dazu. 
