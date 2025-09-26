@@ -3,6 +3,8 @@
 ## Ziel der Aufgabe
 Du implementierst zu zweit ein Design Pattern und entwickelst ein Plakat oder einen OnePager dazu. 
 
+<img width="1549" height="416" alt="image" src="https://github.com/user-attachments/assets/7f1b007f-59c4-44a2-bacc-714f91ae64b6" />
+
 ## Abgabe
 Die Abgabe erfolgt bis zum 16.10.2025 um 20:00 als Pull-Request an diesem GitHub-Repository
 
