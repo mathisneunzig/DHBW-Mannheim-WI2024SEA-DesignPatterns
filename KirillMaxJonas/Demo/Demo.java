@@ -1,4 +1,4 @@
-package KirillMaxJonas;
+package KirillMaxJonas.Demo;
 import java.util.*;
 
 public class Demo{
