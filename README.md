@@ -15,3 +15,10 @@ OnePager/Plakat:
 - Einsatzgebiete
 - Warum existiert das Pattern?
 - Code-Beispiel (Auszüge bzw. das, was wichtig ist)
+
+## Ablauf
+1. Fork anlegen
+2. Ordner mit euren Namen anlegen
+3. In eurem ordner ein lauffähiges Beispiel implementieren
+4. In die README.md schreiben, wie ich das Beispiel ausführen kann (z.B. "node index.js" für eine einfache JS-Datei)
+5. Auch den OnePager in eurem Ordner ablegen
