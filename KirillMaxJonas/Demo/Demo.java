@@ -4,10 +4,13 @@ import java.util.*;
 public class Demo{
     public static void main(String[] args){
         StockMarket stockMarket = new StockMarket();
+        // coole namen
         Investor hedgefondHenning = new Investor(0);
         Investor kreditKarl = new Investor(1);
+
         stockMarket.addObserver(hedgefondHenning);
         stockMarket.addObserver(kreditKarl);
+
         stockMarket.setPrice(20);
         stockMarket.setPrice(23.6);
     }
