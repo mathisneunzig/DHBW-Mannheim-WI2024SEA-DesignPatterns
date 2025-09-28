@@ -3,7 +3,7 @@ import CatEnums.*;
 public class Cat {
 
     public static class CatBuilder{
-        Cat cat = new Cat();
+        private Cat cat = new Cat();
         public CatBuilder(){
         }
 
@@ -14,6 +14,11 @@ public class Cat {
 
         public CatBuilder setAge(int age){
             cat.setAge(age);
+            return this;
+        }
+
+        public CatBuilder setPersonality(CatPersonality personality){
+            cat.setPersonality(personality);
             return this;
         }
 
@@ -74,13 +79,21 @@ public class Cat {
 
     private Cat(){
         name = DEFAULT_NAME;
+        age = DEFAULT_AGE;
+        personality = DEFAULT_PEERSONALITY;
+        race = DEFAULT_RACE;
+        furColor = DEFAULT_FUR_COLOR;
+        furPattern = DEFAULT_FUR_PATTERN;
+        eyeColor = DEFAULT_EYE_COLOR;
+        favouriteToy = DEFAULT_FAVOURITE_TOY;
+        favouriteConsumable = DEFAULT_FAVOURITE_CONSUMABLE;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
@@ -88,7 +101,7 @@ public class Cat {
         return age;
     }
 
-    public void setAge(int age) {
+    private void setAge(int age) {
         this.age = age;
     }
 
@@ -96,7 +109,7 @@ public class Cat {
         return personality;
     }
 
-    public void setPersonality(CatPersonality personality) {
+    private void setPersonality(CatPersonality personality) {
         this.personality = personality;
     }
 
@@ -104,7 +117,7 @@ public class Cat {
         return race;
     }
 
-    public void setRace(CatRace race) {
+    private void setRace(CatRace race) {
         this.race = race;
     }
 
@@ -112,7 +125,7 @@ public class Cat {
         return furColor;
     }
 
-    public void setFurColor(CatFurColor furColor) {
+    private void setFurColor(CatFurColor furColor) {
         this.furColor = furColor;
     }
 
@@ -120,7 +133,7 @@ public class Cat {
         return furPattern;
     }
 
-    public void setFurPattern(CatFurPattern furPattern) {
+    private void setFurPattern(CatFurPattern furPattern) {
         this.furPattern = furPattern;
     }
 
@@ -128,7 +141,7 @@ public class Cat {
         return eyeColor;
     }
 
-    public void setEyeColor(CatEyeColor eyeColor) {
+    private void setEyeColor(CatEyeColor eyeColor) {
         this.eyeColor = eyeColor;
     }
 
@@ -136,7 +149,7 @@ public class Cat {
         return favouriteToy;
     }
 
-    public void setFavouriteToy(CatToy favouriteToy) {
+    private void setFavouriteToy(CatToy favouriteToy) {
         this.favouriteToy = favouriteToy;
     }
 
@@ -144,7 +157,22 @@ public class Cat {
         return favouriteConsumable;
     }
 
-    public void setFavouriteConsumable(CatConsumable favouriteConsumable) {
+    private void setFavouriteConsumable(CatConsumable favouriteConsumable) {
         this.favouriteConsumable = favouriteConsumable;
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", personality=" + personality +
+                ", race=" + race +
+                ", furColor=" + furColor +
+                ", furPattern=" + furPattern +
+                ", eyeColor=" + eyeColor +
+                ", favouriteToy=" + favouriteToy +
+                ", favouriteConsumable=" + favouriteConsumable +
+                '}';
     }
 }
