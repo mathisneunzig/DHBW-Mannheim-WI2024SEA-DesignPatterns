@@ -25,12 +25,23 @@ OnePager/Plakat:
 4. In die README.md schreiben, wie ich das Beispiel ausführen kann (z.B. "node index.js" für eine einfache JS-Datei)
 5. Auch den OnePager in eurem Ordner ablegen
 
-## Builder - Katrin, Leonie, Daniel
-1.  Ordern "Builder Pattern" in IDE öffnen
-2. Im Source Folder die Main Klasse auswählen
-3. ***Optional:*** Lieblingskatze mit CatBuilder erstellen
-4. Main methode ausfürhen
-5. Das Katzenbild genießen
+## ***Builder*** - Katrin, Leonie, Daniel
 
-<img src="https://i.pinimg.com/474x/c9/37/0b/c9370b56dda66f84f228dd49d73cd0ce--ginger-kitten-ginger-cats.jpg"
-alt="Süße Mietzekatze" width="15%" />
+
+<table>
+<tr>
+<td style="vertical-align: top;">
+
+1.  Ordern "Builder Pattern" in IDE öffnen
+2.  Im Source Folder die Main Klasse auswählen
+3.  <em>Optional:</em> Lieblingskatze mit CatBuilder erstellen
+4.  Main methode ausführen
+5.  Das Katzenbild genießen
+
+</td>
+<td style="vertical-align: top;">
+<img src="https://i.pinimg.com/474x/c9/37/0b/c9370b56dda66f84f228dd49d73cd0ce--ginger-kitten-ginger-cats.jpg" 
+     alt="Süße Mietzekatze" width="300"/>
+</td>
+</tr>
+</table>
