@@ -33,4 +33,4 @@ OnePager/Plakat:
 5. Das Katzenbild genießen
 
 <img src="https://i.pinimg.com/474x/c9/37/0b/c9370b56dda66f84f228dd49d73cd0ce--ginger-kitten-ginger-cats.jpg"
-alt="Süße Mietzekatze" width="33%" />
+alt="Süße Mietzekatze" width="15%" />
