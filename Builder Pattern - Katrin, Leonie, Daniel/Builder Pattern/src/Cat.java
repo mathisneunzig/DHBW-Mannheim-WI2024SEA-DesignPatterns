@@ -1,9 +1,37 @@
 import CatEnums.*;
 
+/**
+ * @author Daniel Brecht<br><br>
+ *
+ *Objects of type {@code Cat} can only be created with a {@code CatBuilder}. <br><br>
+ *
+ *The {@code CatBuilder} is an Inner-Top-Level-Class and can be found at the top of the class {@code Cat}. <br><br>
+ *
+ *Example code to create an object of {@code Cat}: <br>
+ *
+ * <pre>{@code
+ * Cat cat = new Cat.CatBuilder()
+ *     .setName("Tommy")
+ *     .setPersonality(CatPersonality.CUDLY)
+ *     .build();
+ * }</pre>
+ */
+
 public class Cat {
 
     public static class CatBuilder{
         private Cat cat = new Cat();
+
+        /** This class is required to build a {@code Cat}. <br><br>
+         *
+         * For each attribute of type {@code Cat} there is a {@code CatBuilder} method to set that attribute. <br>
+         * If you don´t set an attribute it will get set to it´s default value. <br><br>
+         *
+         * All {@code CatBuilder} setters return it´s own instance of {@code CatBuilder}
+         * so you can call the setters on top of each others.<br><br>
+         *
+         * To get an Object of Tpye {@code Cat} you have to call the method {@code build} on top of the
+         * {@code CatBuilder} instance.*/
         public CatBuilder(){
         }
 
@@ -14,6 +42,11 @@ public class Cat {
 
         public CatBuilder setAge(int age){
             cat.setAge(age);
+            return this;
+        }
+
+        public CatBuilder setCatGender(CatGender gender){
+            cat.setGender(gender);
             return this;
         }
 
@@ -59,6 +92,7 @@ public class Cat {
 
     public static final String DEFAULT_NAME = "Mietzi";
     public static final int DEFAULT_AGE = 1;
+    public static final CatGender DEFAULT_CAT_GENDER = CatGender.FEMALE;
     public static final CatPersonality DEFAULT_PEERSONALITY = CatPersonality.SLEEPY;
     public static final CatRace DEFAULT_RACE = CatRace.CHARTREUX;
     public static final CatFurColor DEFAULT_FUR_COLOR = CatFurColor.GREY;
@@ -69,6 +103,7 @@ public class Cat {
 
     private String name;
     private int age;
+    private CatGender catGender;
     private CatPersonality personality;
     private CatRace race;
     private CatFurColor furColor;
@@ -80,6 +115,7 @@ public class Cat {
     private Cat(){
         name = DEFAULT_NAME;
         age = DEFAULT_AGE;
+        catGender = DEFAULT_CAT_GENDER;
         personality = DEFAULT_PEERSONALITY;
         race = DEFAULT_RACE;
         furColor = DEFAULT_FUR_COLOR;
@@ -103,6 +139,14 @@ public class Cat {
 
     private void setAge(int age) {
         this.age = age;
+    }
+
+    public CatGender getGender() {
+        return catGender;
+    }
+
+    private void setGender(CatGender catGender) {
+        this.catGender = catGender;
     }
 
     public CatPersonality getPersonality() {
