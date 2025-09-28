@@ -32,7 +32,7 @@ OnePager/Plakat:
 <tr>
 <td style="vertical-align: top;">
 
-1.  Ordner "Builder Pattern" in IDE öffnen
+1.  Ordner "<b>Builder Pattern</b>" in IDE öffnen
 2.  Im Source Folder die Main Klasse auswählen
 3.  <strong><em>Optional:</em></strong> Lieblingskatze mit CatBuilder erstellen
 4.  Main methode ausführen
