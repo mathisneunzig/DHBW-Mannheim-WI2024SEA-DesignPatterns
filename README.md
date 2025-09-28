@@ -34,7 +34,7 @@ OnePager/Plakat:
 
 1.  Ordern "Builder Pattern" in IDE öffnen
 2.  Im Source Folder die Main Klasse auswählen
-3.  <em>Optional:</em> Lieblingskatze mit CatBuilder erstellen
+3.  <strong><em>Optional:</em></strong> Lieblingskatze mit CatBuilder erstellen
 4.  Main methode ausführen
 5.  Das Katzenbild genießen
 
