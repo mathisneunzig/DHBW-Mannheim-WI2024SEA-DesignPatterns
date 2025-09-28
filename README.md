@@ -36,7 +36,7 @@ OnePager/Plakat:
 2.  Im Source Folder die Main Klasse auswählen
 3.  <strong><em>Optional:</em></strong> Lieblingskatze mit CatBuilder erstellen
 4.  Main methode ausführen
-5.  Das Katzenbild genießen
+5.  Das Katzenbild genießen 😻
 
 </td>
 <td style="vertical-align: top;">
