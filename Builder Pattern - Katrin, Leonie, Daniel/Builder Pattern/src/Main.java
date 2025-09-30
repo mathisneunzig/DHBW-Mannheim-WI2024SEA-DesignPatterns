@@ -39,6 +39,18 @@ public class Main {
                 setFavouriteToy(CatToy.CATNIP_MOUSE).
                 build());
 
+        myLittleCatTroop.add(new Cat.CatBuilder().
+                setName("Sunny").
+                setAge(3).
+                setPersonality(CatPersonality.MOODY).
+                setFurColor(CatFurColor.ORANGE).
+                setFurPattern(CatFurPattern.STRIPED).
+                setCatGender(CatGender.MALE).
+                setEyeColor(CatEyeColor.GREEN).
+                setFavouriteToy(CatToy.BALL_OF_YARN).
+                setFavouriteConsumable(CatConsumable.WHOLE_CHICKEN).
+                build());
+
         for (Cat cat : myLittleCatTroop){
             System.out.println(cat);
         }

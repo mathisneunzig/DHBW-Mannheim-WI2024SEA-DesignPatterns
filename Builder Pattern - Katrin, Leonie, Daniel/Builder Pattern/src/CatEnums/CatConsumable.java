@@ -8,6 +8,7 @@ public enum CatConsumable {
     TUNA("tuna"),
     SCRAMBLED_EGGS("scrambled eggs"),
     FOOD_LEFTOVERS("food leftovers"),
+    WHOLE_CHICKEN("whole chicken"),
 
     TAP_WATER("tap water"),
     RAIN_WATER("rain water"),
