@@ -38,12 +38,6 @@ javac ErelLukas/*.java
 java ErelLukas.Main
 ```
 
-### Alternative: Alle Schritte in einem
-
-```bash
-javac ErelLukas/*.java && java ErelLukas.Main
-```
-
 ## Verwendung
 
 ### Beispielausgabe
