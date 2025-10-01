@@ -1,9 +1,9 @@
 # Adapter Pattern
 ## Steckbrief
-**Name:** Adapter (auch Hüllenklasse oder Wrapper)
-**Art:** Strukturmuster
-**Klassifikation:** klassen- oder objektbasiertes Strukturmuster
-**Zweck:** Dient dazu zwei inkompatible Schnittstellen zu Verbinden
+**Name:** Adapter (auch Hüllenklasse oder Wrapper) <br>
+**Art:** Strukturmuster<br>
+**Klassifikation:** klassen- oder objektbasiertes Strukturmuster<br>
+**Zweck:** Dient dazu zwei inkompatible Schnittstellen zu Verbinden<br>
 **Struktur:**
 ````mermaid
 flowchart
