@@ -2,30 +2,58 @@ package main
 
 import "fmt"
 
-type Chinese struct{}
+// Mikro USB Stecker unterstützt MikroUSBEinstecken
+type MikroUSBStecker struct{}
 
-func (a *Chinese) SagHalloAufChinesisch() {
-    fmt.Println("你好")
+func (a *MikroUSBStecker) MikroUSBEinstecken() {
+	fmt.Println("Microsteckt drin")
 }
 
-type Deutscher interface{
-	SagHalloAufDeutsch()
+// USB-C Stecker unterstützt USBCEinstecken
+type usbcStecker struct{}
+
+func (e *usbcStecker) USBCEinstecken() {
+    fmt.Println("Echter USB-C steckt drin.")
 }
 
-type Übersetzer struct{
-	chinese *Chinese
+// Der Adapter hat einen microUSbStecker und implementiert das Interface USBC
+type Adapter struct {
+	microUSBStecker *MikroUSBStecker
 }
 
-func (s *Übersetzer) SagHalloAufDeutsch() {
-    s.chinese.SagHalloAufChinesisch()
+func (s *Adapter) USBCEinstecken() {
+	s.microUSBStecker.MikroUSBEinstecken()
 }
 
-func main(){
-	chinese := &Chinese{}
+// Dieses Interface kennt der Client und verwendet es um Stecker einzustecken
+type USBCStecker interface {
+	USBCEinstecken()
+}
 
-    übersetzer := &Übersetzer{
-        chinese: chinese,
-    }
 
-    übersetzer.SagHalloAufDeutsch()
+//Die Funktion erwartet ein Usbc-Gerät und Steckt dann den USBC Stecker ein
+type Client struct{}
+
+func (c *Client) SteckerEinstecken(stecker USBCStecker){
+    stecker.USBCEinstecken()
+}
+
+func main() {
+    //Der Client möchte gerne alle seine Stecker einstecken, 
+    //kennt aber nur das Interface USBCStecker mit der Funktion USBC-Einstecken
+    Client := &Client{}
+
+    //seinen neuen USBC Stecker kann er Problemlos einstecken...
+    var usbcStecker *usbcStecker
+    Client.SteckerEinstecken(usbcStecker)
+
+    //aber beim Versuch seinen alten microUSB Stecker einzustecken gibt es einen Fehler...
+    var microUSBStecker *MikroUSBStecker
+    Client.SteckerEinstecken(microUSBStecker)
+
+    //Deswegen steckt er seinen alten Mikro USB stecker in den Adapter und versucht es nochmal
+    adapter := &Adapter{microUSBStecker: microUSBStecker}
+    Client.SteckerEinstecken(adapter)
+
+    //Jetzt gibt es keinen Fehler mehr und das einstecken Funktioniert auch mit dem Mikro-USB Stecker
 }
