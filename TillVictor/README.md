@@ -44,17 +44,18 @@ flowchart
 ````mermaid
 flowchart
 	Client
-	Adapter["Übersetzer 
-	SagHalloAufDeutsch()"]
-	Adaptee["Chinese
-	SagHalloAufChinesisch()"]
-	Target["Deutscher
-	SagHalloAufDeutsch()"]
+	Adapter["Adapter 
+	USBCEinstecken()"]
+	Adaptee["MikroUSBStecker
+	mikroUSBEinstecken()"]
+	Target["IUSBCStecker
+	USBCEinstecken()"]
 	
 	Client --> Target
 	Adapter --> Target
 	Adapter --> Adaptee
 	
 ````
+
 <img width="742" height="348" alt="grafik" src="https://github.com/user-attachments/assets/e7fbf091-711f-4c81-a29e-f2476161e181" />
 
