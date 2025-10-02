@@ -1,60 +1,77 @@
 # Adapter Pattern
+
 ## Steckbrief
+
 **Name:** Adapter (auch Hüllenklasse oder Wrapper) <br>
 **Art:** Strukturmuster<br>
 **Klassifikation:** klassen- oder objektbasiertes Strukturmuster<br>
 **Zweck:** Dient dazu zwei inkompatible Schnittstellen zu Verbinden<br>
-**Struktur:**
-````mermaid
+**Hauptkomponente:**
+
+- Target: Das ist die Client-Schnittstelle, die vom Client verwendet wird und die dieser erwartet.
+- Client: Eine Klasse, die mit Objekten interagiert, welche die Client-Schnittstelle implementieren.
+- Adapter: Implementiert die Client-Schnittstelle und hält intern eine Referenz auf das Adaptee-Objekt. "Übersetzt" die Aufrufe vom Client an den Adaptee.
+- Adaptee: Besitzt die Funktionalität, hat aber eine zum Client inkompatible Schnittstelle.
+  **Struktur:**
+
+```mermaid
 flowchart
 	Client
-	Adapter["Adapter 
+	Adapter["Adapter
 	request()"]
 	Adaptee["Adaptee
 	specificRequest()"]
 	Target["Target
 	request()"]
-	
+
 	Client --> Target
 	Adapter --> Target
 	Adapter --> Adaptee
-	
-````
+
+```
+
 - das Target ist die Schnittstelle welche vom Client genutzt wird
 - der Adapter implementiert diese Schnittstelle und leitet den Aufruf an den nicht kompatiblen specificRequest() des Adaptees weiter
 - Dadurch kann der Client den Adaptee verwenden obwohl er nur die Schnittstelle aufruft, die er kennt
 
 ## Vorteile & Nachteile
 
-| Pro                                                                              | Con                                                                                    |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| - Ermöglicht die Wiederververwendbarkeit von Code trotz fehlender Kompatibilität | - kann bei wenigen oder kleinen Schnittstellen schnell unnötige Komplexität hinzufügen |
-|                                                                                  | - Ineffizienter durch eine dritte Instanz in der Mitte                                 |
-|                                                                                  |                                                                                        |
+| Pro|Con|
+|--|--|
+|Ermöglicht die Wiederververwendbarkeit von Code trotz fehlender Kompatibilität |Kann bei wenigen oder kleinen Schnittstellen schnell unnötige Komplexität hinzufügen|
+| Die Logik zur "Übersetzung" der Schnittstellen ist sauber im Adapter gekapselt. Client und Adaptee bleiben unverändert. |Ineffizienter durch eine dritte Instanz in der Mitte|
+|Ein Adapter kann auch mehrere Adaptees kapseln oder zusätzliche Funktionalität hinzufügen.
 
 ## Einsatzgebiete
+
 - Einbindung von nicht direkt kompatiblen Bibliotheken
-- Einbindung von alten, nicht mehr kompatiblen, Technologien
+- Einbindung von alten, nicht mehr kompatiblen Systemteilen (z.B. alter Code)
+- Kompatibilität zwischen verschiedenen Dateiformaten herstellen (z.B. Adapter, der XML zu JSON umwandelt)
 
 ## Warum existiert das Pattern
+Ohne das Pattern müsste man entweder:
+- Den Client umschreiben: Der Code des neuen Systems müsste an den alten angepasst werden. Dies ist oft unerwünscht. 
+- Den Adaptee umschreiben: Das ist oft unmöglich, z.B. wenn es externe Bibliotheken sind. 
 
 ## Codebeispiel
+
 - kann in der main.go über `go run main.go` ausgeführt werden.
 - Pattern Struktur auf unser Codebeispiel angewendet:
-````mermaid
+
+```mermaid
 flowchart
 	Client
-	Adapter["Übersetzer 
+	Adapter["Übersetzer
 	SagHalloAufDeutsch()"]
 	Adaptee["Chinese
 	SagHalloAufChinesisch()"]
 	Target["Deutscher
 	SagHalloAufDeutsch()"]
-	
+
 	Client --> Target
 	Adapter --> Target
 	Adapter --> Adaptee
-	
-````
-<img width="742" height="348" alt="grafik" src="https://github.com/user-attachments/assets/e7fbf091-711f-4c81-a29e-f2476161e181" />
 
+```
+
+<img width="742" height="348" alt="grafik" src="https://github.com/user-attachments/assets/e7fbf091-711f-4c81-a29e-f2476161e181" />
