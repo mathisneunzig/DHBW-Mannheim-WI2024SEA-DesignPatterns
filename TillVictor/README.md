@@ -12,7 +12,8 @@
 - Client: Eine Klasse, die mit Objekten interagiert, welche die Client-Schnittstelle implementieren.
 - Adapter: Implementiert die Client-Schnittstelle und hält intern eine Referenz auf das Adaptee-Objekt. "Übersetzt" die Aufrufe vom Client an den Adaptee.
 - Adaptee: Besitzt die Funktionalität, hat aber eine zum Client inkompatible Schnittstelle.
-  **Struktur:**
+
+**Struktur:**
 
 ```mermaid
 flowchart
@@ -50,8 +51,8 @@ flowchart
 
 ## Warum existiert das Pattern
 Ohne das Pattern müsste man entweder:
-- Den Client umschreiben: Der Code des neuen Systems müsste an den alten angepasst werden. Dies ist oft unerwünscht. 
-- Den Adaptee umschreiben: Das ist oft unmöglich, z.B. wenn es externe Bibliotheken sind. 
+- Den Client umschreiben: Der Code des neuen Systems müsste an die Schnittstelle angepasst werden. Dadurch könnte der Client z.B. die Möglichkeit verlieren, mit zuvor kompatiblen Schnittstellen zu kommunizieren. 
+- Den Adaptee umschreiben: Das ist teilwese unmöglich wie z.B. bei externen Bibliotheken, bzw. hoher Aufwand, da alter Code verändert werden muss. 
 
 ## Codebeispiel
 
