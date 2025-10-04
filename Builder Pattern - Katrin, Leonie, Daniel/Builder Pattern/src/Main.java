@@ -51,6 +51,18 @@ public class Main {
                 setFavouriteConsumable(CatConsumable.WHOLE_CHICKEN).
                 build());
 
+        myLittleCatTroop.add(new Cat.CatBuilder().
+                setName("Scorch").
+                setAge(10).
+                setCatGender(CatGender.FEMALE).
+                setPersonality(CatPersonality.SLEEPY).
+                setFurColor(CatFurColor.BROWN).
+                setFurPattern(CatFurPattern.BLOTCHED).
+                setEyeColor(CatEyeColor.BLUE).
+                setFavouriteToy(CatToy.LASER_POINTER).
+                setFavouriteConsumable(CatConsumable.MILK).
+                build());
+
         for (Cat cat : myLittleCatTroop){
             System.out.println(cat);
         }
