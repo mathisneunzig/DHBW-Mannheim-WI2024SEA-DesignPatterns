@@ -63,6 +63,15 @@ public class Main {
                 setFavouriteConsumable(CatConsumable.MILK).
                 build());
 
+        myLittleCatTroop.add(new Cat.CatBuilder().
+                setName("Bacon").
+                setAge(12).
+                setCatGender(CatGender.MALE).
+                setPersonality(CatPersonality.HUNGRY).
+                setFurPattern(CatFurPattern.SOLID).
+                setFurColor(CatFurColor.BLACK).
+                build());
+
         for (Cat cat : myLittleCatTroop){
             System.out.println(cat);
         }
