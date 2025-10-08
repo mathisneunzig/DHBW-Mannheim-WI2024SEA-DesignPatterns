@@ -6,7 +6,7 @@
 **Art:** Strukturmuster<br>
 **Klassifikation:** klassen- oder objektbasiertes Strukturmuster<br>
 **Zweck:** Dient dazu zwei inkompatible Schnittstellen zu Verbinden<br>
-**Hauptkomponente:**
+**Hauptkomponenten:**
 
 - Target: Das ist die Client-Schnittstelle, die vom Client verwendet wird und die dieser erwartet.
 - Client: Eine Klasse, die mit Objekten interagiert, welche die Client-Schnittstelle implementieren.
