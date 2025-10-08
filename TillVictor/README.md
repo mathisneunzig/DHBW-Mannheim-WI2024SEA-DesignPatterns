@@ -11,7 +11,7 @@
 - Target: Das ist die Client-Schnittstelle, die vom Client verwendet wird und die dieser erwartet.
 - Client: Eine Klasse, die mit Objekten interagiert, welche die Client-Schnittstelle implementieren.
 - Adapter: Implementiert die Client-Schnittstelle und hält intern eine Referenz auf das Adaptee-Objekt. "Übersetzt" die Aufrufe vom Client an den Adaptee.
-- Adaptee: Besitzt die Funktionalität, hat aber eine zum Client inkompatible Schnittstelle.
+- Adaptee: Besitzt die Funktionalität, hat aber eine zum Client inkompatible Schnittstelle (specificRequest()).
 
 **Struktur:**
 
@@ -31,9 +31,7 @@ flowchart
 
 ```
 
-- das Target ist die Schnittstelle welche vom Client genutzt wird
-- der Adapter implementiert diese Schnittstelle und leitet den Aufruf an den nicht kompatiblen specificRequest() des Adaptees weiter
-- Dadurch kann der Client den Adaptee verwenden obwohl er nur die Schnittstelle aufruft, die er kennt
+-> Der Client kann den Adaptee verwenden obwohl er nur die Schnittstelle aufruft, die er kennt
 
 ## Vorteile & Nachteile
 
@@ -47,7 +45,6 @@ flowchart
 
 - Einbindung von nicht direkt kompatiblen Bibliotheken
 - Einbindung von alten, nicht mehr kompatiblen Systemteilen (z.B. alter Code)
-- Kompatibilität zwischen verschiedenen Dateiformaten herstellen (z.B. Adapter, der XML zu JSON umwandelt)
 
 ## Warum existiert das Pattern
 Ohne das Pattern müsste man entweder:
@@ -65,7 +62,7 @@ flowchart
 	Adapter["Adapter
 	USBCEinstecken()"]
 	Adaptee["MikroUSBStecker
-	mikroUSBEinstecken()"]
+	MikroUSBEinstecken()"]
 	Target["IUSBCStecker
 	USBCEinstecken()"]
 
