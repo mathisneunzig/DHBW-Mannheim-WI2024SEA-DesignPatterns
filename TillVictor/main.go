@@ -22,7 +22,7 @@ type Adapter struct {
 }
 
 func (s *Adapter) USBCEinstecken() {
-	fmt.Println("Stecke Micro USB Stecker in den Adapter...")
+	fmt.Println("Stecke Mikro USB Stecker in den Adapter...")
 	s.mikroUSBStecker.MikroUSBEinstecken()
 }
 
