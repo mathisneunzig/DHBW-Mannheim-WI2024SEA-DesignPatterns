@@ -35,10 +35,11 @@ flowchart
 
 ## Vorteile & Nachteile
 
-| Pro|Con|
-|--|--|
-|Ermöglicht die Wiederververwendbarkeit von Code trotz fehlender Kompatibilität |Kann bei wenigen oder kleinen Schnittstellen schnell unnötige Komplexität hinzufügen|
-| Die Logik zur "Übersetzung" der Schnittstellen ist sauber im Adapter gekapselt. Client und Adaptee bleiben unverändert. |Ineffizienter durch eine dritte Instanz in der Mitte|
+| Pro                                                                                                                     | Con                                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Ermöglicht die Wiederververwendbarkeit von Code trotz fehlender Kompatibilität                                          | Kann bei wenigen oder kleinen Schnittstellen schnell unnötige Komplexität hinzufügen |
+| Die Logik zur "Übersetzung" der Schnittstellen ist sauber im Adapter gekapselt. Client und Adaptee bleiben unverändert. | Ineffizienter durch eine dritte Instanz in der Mitte                                 |
+
 |Ein Adapter kann auch mehrere Adaptees kapseln oder zusätzliche Funktionalität hinzufügen.
 
 ## Einsatzgebiete
@@ -47,9 +48,11 @@ flowchart
 - Einbindung von alten, nicht mehr kompatiblen Systemteilen (z.B. alter Code)
 
 ## Warum existiert das Pattern
+
 Ohne das Pattern müsste man entweder:
-- Den Client umschreiben: Der Code des neuen Systems müsste an die Schnittstelle angepasst werden. Dadurch könnte der Client z.B. die Möglichkeit verlieren, mit zuvor kompatiblen Schnittstellen zu kommunizieren. 
-- Den Adaptee umschreiben: Das ist teilwese unmöglich wie z.B. bei externen Bibliotheken, bzw. hoher Aufwand, da alter Code verändert werden muss. 
+
+- Den Client umschreiben: Der Code des neuen Systems müsste an die Schnittstelle angepasst werden. Dadurch könnte der Client z.B. die Möglichkeit verlieren, mit zuvor kompatiblen Schnittstellen zu kommunizieren.
+- Den Adaptee umschreiben: Das ist teilwese unmöglich wie z.B. bei externen Bibliotheken, bzw. hoher Aufwand, da alter Code verändert werden muss.
 
 ## Codebeispiel
 
@@ -71,5 +74,6 @@ flowchart
 	Adapter --> Adaptee
 
 ```
+
 \
-![alt text](image.png)
+![alt text](CodeExample.png)
