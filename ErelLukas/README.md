@@ -3,6 +3,7 @@
 ## Übersicht
 
 Dieses Projekt demonstriert das **Visitor Pattern** anhand von geometrischen Formen (Shapes). Das Pattern ermöglicht es, neue Operationen auf bestehende Klassen anzuwenden, ohne diese Klassen zu verändern.
+Bildliche Übersicht auch in **visitorpattern.html**
 
 ## Konzept
 

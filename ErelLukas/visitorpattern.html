@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visitor Pattern - One Pager</title>
+    <style>
+      @media print {
+        body {
+          margin: 0;
+        }
+        .no-print {
+          display: none;
+        }
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        background: #f5f5f5;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #2c3e50;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        border-bottom: 4px solid #3498db;
+        padding-bottom: 10px;
+      }
+
+      .subtitle {
+        color: #7f8c8d;
+        font-size: 1.1em;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        color: #2980b9;
+        font-size: 1.6em;
+        margin-top: 25px;
+        margin-bottom: 12px;
+        border-left: 5px solid #3498db;
+        padding-left: 15px;
+      }
+
+      .intro {
+        background: #ecf0f1;
+        padding: 20px;
+        border-radius: 8px;
+        font-size: 1.2em;
+        margin-bottom: 25px;
+        border-left: 5px solid #3498db;
+      }
+
+      .code-block {
+        background: #2c3e50;
+        color: #ecf0f1;
+        padding: 15px;
+        border-radius: 6px;
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        margin: 15px 0;
+        overflow-x: auto;
+      }
+
+      .keyword {
+        color: #e74c3c;
+      }
+      .class-name {
+        color: #f39c12;
+      }
+      .comment {
+        color: #95a5a6;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 15px 0;
+      }
+
+      .box {
+        padding: 15px;
+        border-radius: 6px;
+      }
+
+      .problem {
+        background: #fadbd8;
+        border-left: 4px solid #e74c3c;
+      }
+
+      .solution {
+        background: #d5f4e6;
+        border-left: 4px solid #27ae60;
+      }
+
+      .pros {
+        background: #d5f4e6;
+        border-left: 4px solid #27ae60;
+      }
+
+      .cons {
+        background: #fadbd8;
+        border-left: 4px solid #e74c3c;
+      }
+
+      ul {
+        margin-left: 20px;
+        margin-top: 8px;
+      }
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      .flow {
+        background: #fff9e6;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #f39c12;
+        margin: 15px 0;
+      }
+
+      .flow-step {
+        padding: 8px;
+        margin: 5px 0;
+        background: white;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+      }
+
+      .arrow {
+        text-align: center;
+        color: #f39c12;
+        font-size: 1.5em;
+        margin: 5px 0;
+      }
+
+      .structure {
+        background: #e8f4f8;
+        padding: 15px;
+        border-radius: 6px;
+        font-family: "Courier New", monospace;
+        border-left: 4px solid #3498db;
+      }
+
+      .download-btn {
+        background: #3498db;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        font-size: 1em;
+        cursor: pointer;
+        margin: 20px 0;
+        display: inline-block;
+      }
+
+      .download-btn:hover {
+        background: #2980b9;
+      }
+
+      @page {
+        margin: 1.5cm;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Visitor Pattern</h1>
+      <div class="subtitle">Design Pattern für erweiterbare Operationen</div>
+
+      <div class="intro">
+        <strong>Was ist das Visitor Pattern?</strong><br />
+        Neue Operationen auf bestehende Klassen anwenden, ohne diese zu
+        verändern.
+      </div>
+
+      <h2>Problem vs. Lösung</h2>
+      <div class="two-column">
+        <div class="box problem">
+          <strong>❌ Ohne Visitor</strong>
+          <ul>
+            <li>Jede Operation in jede Klasse einbauen</li>
+            <li>Klassen werden immer größer</li>
+            <li>Änderungen an allen Klassen nötig</li>
+          </ul>
+          <div class="code-block">
+            <span class="keyword">class</span>
+            <span class="class-name">Circle</span> { calculateArea()
+            calculatePerimeter() printColor() exportAsSVG()
+            <span class="comment">// immer mehr...</span>
+            }
+          </div>
+        </div>
+        <div class="box solution">
+          <strong>✅ Mit Visitor</strong>
+          <ul>
+            <li>Operationen als separate Klassen</li>
+            <li>Shapes bleiben klein und stabil</li>
+            <li>Neue Operation = neue Visitor-Klasse</li>
+          </ul>
+          <div class="code-block">
+            <span class="keyword">class</span>
+            <span class="class-name">Circle</span> { accept(visitor) }
+            <span class="keyword">class</span>
+            <span class="class-name">AreaCalculator</span> { visit(Circle c)
+            visit(Square s) }
+          </div>
+        </div>
+      </div>
+      <h2>Wie funktioniert es?</h2>
+      <div class="flow">
+        <div class="flow-step">1. Circle circle = new Circle(5);</div>
+        <div class="flow-step">
+          2. AreaCalculator calc = new AreaCalculator();
+        </div>
+        <div class="arrow">↓</div>
+        <div class="flow-step">
+          3. circle.accept(calc);
+          <span class="comment">// Circle ruft calc.visit(this)</span>
+        </div>
+        <div class="arrow">↓</div>
+        <div class="flow-step">4. calc.visit(Circle) wird ausgeführt</div>
+      </div>
+
+      <h2>Struktur</h2>
+      <div class="structure">
+        Shape (Interface)<br />
+        ├─ Circle<br />
+        ├─ Square<br />
+        └─ Triangle<br />
+        <br />
+        ShapeVisitor (Interface)<br />
+        ├─ AreaCalculator<br />
+        ├─ PerimeterCalculator<br />
+        └─ ColorPrinter
+      </div>
+      <h2>Pros &amp; Cons</h2>
+      <div class="two-column">
+        <div class="box pros">
+          <strong>✅ Vorteile</strong>
+          <ul>
+            <li>Neue Operationen ohne Klassenänderung</li>
+            <li>Saubere Trennung: Daten ↔ Operationen</li>
+            <li>Verwandte Operationen gruppiert</li>
+          </ul>
+        </div>
+
+        <div class="box cons">
+          <strong>❌ Nachteile</strong>
+          <ul>
+            <li>Neue Typen = alle Visitors anpassen</li>
+            <li>Komplexer als einfache Methoden</li>
+            <li>Benötigt accept()-Methode</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Wann verwenden?</h2>
+      <ul>
+        <li>✅ Viele verschiedene Operationen auf denselben Objekten</li>
+        <li>✅ Objektstruktur ist stabil (wenige neue Typen)</li>
+        <li>✅ Originalklassen nicht änderbar</li>
+        <li>❌ Häufig neue Objekttypen → dann nicht geeignet</li>
+      </ul>
+    </div>
+  </body>
+</html>
