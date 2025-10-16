@@ -1,12 +1,14 @@
 package main
 
 func main() {
-	println("Hello World from the iterator demo in Go!")
+	println("--- Iterator pattern in Go ---")
 
+	// Create playlist
 	p := Playlist{}
 	p.Add(Song{Title: "Coding with vibes"})
 	p.Add(Song{Title: "The great song"})
 
+	// Create cd
 	cd := CD{}
 	cd.Add(Song{Title: "Classic mood"})
 
@@ -20,6 +22,6 @@ func printToConsole(content Aggregate[Song]) {
 	i := content.GetIterator()
 
 	for i.hasNext() {
-		println(i.next().Title)
+		println("Title: " + i.next().Title)
 	}
 }
