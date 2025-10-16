@@ -1,15 +1,16 @@
 # Design Pattern Aufgabe (5 Punkte) - Memento von Christina & Lea
 
-## Ziel der Aufgabe
-Design Pattern und ein Plakat oder einen OnePager dazu.
+## Onepager der Aufgabe
+Unser Onepager ist "Memento_OnePager.pdf". In welchem das Grundprinzip, Einsatzgebiete, Vor und Nachteile sowie ein Beispiel enthalten sind
 
 ## TypeScript Codebeispiel
-- Idee: Memento Pattern mit Klassen Caretaker, Memenot & Texteditor (Originator) am Beispiel eines Texteditors zeigen
-- ausführen mit...
-    1. ```tsc run index.ts``` -> generiert js datei
-    2. ```node index.js```
+- Idee: Memento Pattern mit Klassen Caretaker, Memento & Texteditor (Originator) am Beispiel eines Texteditors zeigen
+- Wie man das Beispiel ausführt: 
+    1. ```npm install```
+    2. ```tsc run index.ts``` -> generiert js datei
+    2. ```node index.js``` -> die generierte js datei ausführen
 
-- gewünschte Ausgabe im Terminal:
+- gewünschte Ausgabe im Terminal bei Ausführung:
 ```TextEditor: aktueller Text: Hallo```
 ```Caretaker: Zustand speichern...```
 ```TextEditor: Zustand wird gespeichert...```
@@ -23,6 +24,5 @@ Design Pattern und ein Plakat oder einen OnePager dazu.
 ```TextEditor: Text wiederhergestellt: Hallo```
 ```Caretaker: Kein Zustand zum Rückgängig machen.```
 
-## OnePager
-- pdf Datei
+
 
