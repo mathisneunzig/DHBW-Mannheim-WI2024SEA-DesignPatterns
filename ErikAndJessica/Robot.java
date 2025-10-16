@@ -33,11 +33,11 @@ public class Robot implements Prototype<Robot>{
         }
         System.out.println();
     }
-
+    // hier erfolgt die Implementierung der clone()-Methode, damit Robot als Prototype fungieren kann
     @Override
     public Robot clone(){
         return new Robot(this.color, this.height,this.type, this.state, this.tasks);
     }
-
-    
 }
+
+

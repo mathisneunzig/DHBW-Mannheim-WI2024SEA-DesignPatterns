@@ -18,7 +18,7 @@ public class Main {
        registry.add(factoryRobotPrototype.type, factoryRobotPrototype);
 
         // neue Liste mit 100 Kopien eines Prototypen
-        // schneller zugriff über Registry und einfaches kopieren über Prototype-Interface
+        // schneller zugriff über Registry und einfaches kopieren über clone()-Methode
         List<Robot> humanoidRobots = new ArrayList<Robot>();
         for (int i = 0; i<100; i++) {
             try {
@@ -35,3 +35,6 @@ public class Main {
 
     }
 }
+
+
+
