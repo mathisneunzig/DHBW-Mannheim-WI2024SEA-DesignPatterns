@@ -7,7 +7,7 @@ Unser Onepager ist "Memento_OnePager.pdf". In welchem das Grundprinzip, Einsatzg
 - Idee: Memento Pattern mit Klassen Caretaker, Memento & Texteditor (Originator) am Beispiel eines Texteditors zeigen
 - Wie man das Beispiel ausführt: 
     1. ```npm install```
-    2. ```tsc run index.ts``` -> generiert js datei
+    2. ```tsc index.ts``` -> generiert js datei
     2. ```node index.js``` -> die generierte js datei ausführen
 
 - gewünschte Ausgabe im Terminal bei Ausführung:
