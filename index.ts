@@ -1,4 +1,4 @@
-// Memento: speichert den Zustand (den Text)
+// Memento: speichert den Zustand
 class Memento {
   textState: string;
 
