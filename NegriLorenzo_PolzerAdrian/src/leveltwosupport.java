@@ -1,11 +1,11 @@
-public class leveltwosupport extends handler {
+public class LevelTwoSupport extends Handler {
     @Override
-    protected boolean canHandle(supportrequest request) {
+    protected boolean canHandle(SupportRequest request) {
         return request.getLevel() == 2;
     }
 
     @Override
-    protected void process(supportrequest request) {
+    protected void process(SupportRequest request) {
         System.out.println("Level 2 Support bearbeitet: " + request.getMessage());
     }
 }

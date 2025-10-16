@@ -1,16 +1,16 @@
-public class main {
+public class Main {
     public static void main(String[] args) {
-        handler level1 = new levelonesupport();
-        handler level2 = new leveltwosupport();
-        handler manager = new managersupport();
+        Handler level1 = new LevelOneSupport();
+        Handler level2 = new LevelTwoSupport();
+        Handler manager = new ManagerSupport();
 
         level1.setNextHandler(level2);
         level2.setNextHandler(manager);
 
-        supportrequest r1 = new supportrequest("Passwort vergessen", 1);
-        supportrequest r2 = new supportrequest("Datenbank langsam", 2);
-        supportrequest r3 = new supportrequest("Server komplett ausgefallen!", 3);
-        supportrequest r4 = new supportrequest("Unbekanntes Problem", 99);
+        SupportRequest r1 = new SupportRequest("Passwort vergessen", 1);
+        SupportRequest r2 = new SupportRequest("Datenbank langsam", 2);
+        SupportRequest r3 = new SupportRequest("Server komplett ausgefallen!", 3);
+        SupportRequest r4 = new SupportRequest("Unbekanntes Problem", 99);
 
         level1.handle(r1);
         level1.handle(r2);

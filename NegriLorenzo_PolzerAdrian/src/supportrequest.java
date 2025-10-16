@@ -1,8 +1,8 @@
-public class supportrequest {
+public class SupportRequest {
     private final String message; 
     private final int level;
 
-    public supportrequest(String message, int level) {
+    public SupportRequest(String message, int level) {
         this.message = message;
         this.level = level;
     }
