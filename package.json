@@ -1,0 +1,17 @@
+{
+  "name": "designpatterns_christina-lea",
+  "version": "1.0.0",
+  "description": "## Ziel der Aufgabe Du implementierst zu zweit ein Design Pattern und entwickelst ein Plakat oder einen OnePager dazu.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
