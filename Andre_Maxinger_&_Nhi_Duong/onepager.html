@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract Factory Pattern</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 30px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .typ {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ddd;
+            font-size: 1.5em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .komponente {
+            margin-bottom: 15px;
+        }
+        
+        .komponente strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .komponente ul {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        
+        .diagram {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.8;
+        }
+        
+        .code {
+            background: #ffffff;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .code-header {
+            background: #f5f5f5;
+            padding: 8px 15px;
+            border-bottom: 1px solid #ddd;
+            font-family: Arial, sans-serif;
+            font-size: 0.9em;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .code-content {
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            line-height: 1.6;
+            font-size: 0.9em;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        ul {
+            margin-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            color: #666;
+        }
+        
+        @media print {
+            body { 
+                background: white; 
+                padding: 0; 
+            }
+            .container { 
+                box-shadow: none; 
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Abstract Factory</h1>
+        <p class="subtitle">Factory of Factories</p>
+        
+        <div class="typ">Erzeugungsmuster (Creational Pattern)</div>
+        
+        <h2>Beschreibung</h2>
+        <p>Das Abstract Factory Muster bietet eine Schnittstelle zum Erstellen von Familien verwandter oder abhängiger Produkte, ohne deren konkrete Klassen anzugeben. Es fungiert als "Factory of Factories", indem eine Super-Fabrik weitere Fabriken erstellt, die wiederum bestimmte Produkte erzeugen.</p>
+        
+        <h2>Komponenten</h2>
+        
+        <div class="komponente">
+            <strong>Abstrakte Fabrik</strong>
+            Schnittstelle zur Erzeugung abstrakter Produkte einer Produktfamilie
+        </div>
+        
+        <div class="komponente">
+            <strong>Konkrete Fabrik</strong>
+            Implementiert die Regeln der abstrakten Fabrik und erzeugt konkrete Produkte einer Produktfamilie
+        </div>
+        
+        <div class="komponente">
+            <strong>Abstrakte Produkte</strong>
+            Schnittstellen, die alle konkreten Produkte implementieren müssen
+        </div>
+        
+        <div class="komponente">
+            <strong>Konkrete Produkte</strong>
+            Implementieren abstrakte Produkte und gehören zu einer bestimmten Produktfamilie
+        </div>
+        
+        <div class="komponente">
+            <strong>Client</strong>
+            Nutzt die abstrakte Fabrik zum Erstellen von Produktfamilien, ohne deren konkrete Typen anzugeben,
+            und interagiert mit Produkten durch die abstrakten Schnittstellen
+        </div>
+        
+        <div class="two-columns">
+            <div>
+                <h2>Vorteile</h2>
+                <ul>
+                    <li>Das Muster stellt sicher, dass die Anwendung nur Produkte einer Produktfamilie nutzt</li>
+                    <li>Lose Kopplung zwischen konkreten Produkten und Client-Code</li>
+                    <li>Neue Produktfamilien können einfach hinzugefügt werden</li>
+                    <li>Produkterstellung findet an einem zentralen Ort statt</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h2>Nachteile</h2>
+                <ul>
+                    <li>Der Code kann komplizierter werden, da viele neue Klassen und Schnittstellen erstellt werden müssen</li>
+                    <li>Die Erzeugung neuer Produkttypen benötigt Änderungen an der abstrakten Fabrik und allen konkreten Fabriken</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Einsatzgebiete</h2>
+        <ul>
+            <li>Anwendungen, die mehrere Cloud-Plattformen (z.B. AWS, Azure, Google Cloud) unterstützen müssen</li>
+            <li>Anwendungen, die mehrere Datenbanksysteme (z.B. SQL, NoSQL) unterstützen müssen</li>
+            <li>Plattformübergreifende UI-Toolkits</li>
+        </ul>
+        
+        <h2>Warum existiert das Pattern?</h2>
+        <p>Systeme benötigen oft Objektgruppen, die zusammenarbeiten und konsistent bleiben müssen. Ohne Abstract Factory müsste der Client-Code konkrete Klassen direkt instanziieren, was das Wechseln zwischen Produktfamilien erschwert. Die Erstellungslogik wäre über den gesamten Code verteilt, was zu Duplikation führt und das Risiko birgt, inkompatible Produkte verschiedener Familien zu mischen.</p>
+        
+        <h2>UML-Diagramm</h2>
+        <div class="diagram">
+                             ┌─────────────────────┐
+                             │     «interface»     │
+                             │     CatFactory      │
+                             ├─────────────────────┤
+                             │ + createKnightCat() │
+                             │ + createNinjaCat()  │
+                             │ + createPirateCat() │
+                             └─────────────────────┘
+                                        △
+             ┌──────────────────────────┼─────────────────────────┐
+             │                          │                         │
+             │                          │                         │
+             │                          │                         │
+  ┌──────────┴──────────┐     ┌─────────┴─────────┐     ┌─────────┴─────────┐
+  │ MaineCoonCatFactory │     │ PersianCatFactory │     │ SiameseCatFactory │
+  ├─────────────────────┤     ├───────────────────┤     ├───────────────────┤
+  │ + create...()       │     │ + create...()     │     │ + create...()     │
+  └─────────────────────┘     └───────────────────┘     └───────────────────┘
+       │     │     │                   | 
+       │     │     │                   |         creates
+       │     │     │                   └────────────────────────────┐
+       │     │     │      creates                                   │
+       │     │     └──────────────────────────────┐                 │     •••
+       │     │     creates                        │                 │
+       │     └───────────────┐                    │                 │
+       │ creates             │                    │                 │
+       ▼                     ▼                    ▼                 ▼
+┌──────────────────┐ ┌─────────────────┐ ┌──────────────────┐ ┌────────────────┐
+│MaineCoonKnightCat│ │MaineCoonNinjaCat│ │MaineCoonPirateCat│ │PersianKnightCat│
+├──────────────────┤ ├─────────────────┤ ├──────────────────┤ ├────────────────┤
+│  + protect()     │ │   + sneak()     │ │   + attack()     │ │  + protect()   │ 
+└──────────────────┘ └─────────────────┘ └──────────────────┘ └────────────────┘
+           |                     |                        |            |
+           │                     │                        │            |
+           ├─────────────────────|────────────────────────|────────────┘
+           │                     │                        │            
+           │                     │                        │            
+           ▽                    ▽                        ▽
+   ┌───────────────────┐     ┌───────────────────┐     ┌───────────────────┐
+   │    «interface»    │     │    «interface»    │     │    «interface»    │
+   │     KnightCat     │     │     NinjaCat      │     │      PirateCat    │
+   ├───────────────────┤     ├───────────────────┤     ├───────────────────┤
+   │ + create...()     │     │ + create...()     │     │ + create...()     │
+   └───────────────────┘     └───────────────────┘     └───────────────────┘
+</div>
+
+        <h2>Code-Beispiel</h2>
+        
+        <h3>1. Abstrakte Fabrik</h3>
+        <div class="code">
+            <div class="code-header">CatFactory.java</div>
+            <div class="code-content">public interface CatFactory {
+    KnightCat createKnightCat();
+    NinjaCat createNinjaCat();
+    PirateCat createPirateCat();
+}</div>
+        </div>
+        
+        <h3>2. Konkrete Fabrik</h3>
+        <div class="code">
+            <div class="code-header">MaineCoonCatFactory.java</div>
+            <div class="code-content">public class MaineCoonCatFactory implements CatFactory {
+
+    public KnightCat createKnightCat() {
+        return new MaineCoonKnightCat();
+    }
+
+    public NinjaCat createNinjaCat() {
+        return new MaineCoonNinjaCat();
+    }
+
+    public PirateCat createPirateCat() {
+        return new MaineCoonPirateCat();
+    }
+   
+}</div>
+        </div>
+        
+        <h3>3. Abstraktes Produkt</h3>
+        <div class="code">
+            <div class="code-header">NinjaCat.java</div>
+            <div class="code-content">public interface NinjaCat {
+    void sneak();
+}</div>
+        </div>
+        
+        <h3>4. Konkretes Produkt</h3>
+        <div class="code">
+            <div class="code-header">MaineCoonNinjaCat.java</div>
+            <div class="code-content">public class MaineCoonNinjaCat implements NinjaCat {
+    public void sneak() {
+        System.out.println("Maine Coon Ninja sneaks - then knocks over a vase for dramatic effect 🥷");
+    }
+}</div>
+        </div>
+        
+        <h3>5. Client-Code</h3>
+        <div class="code">
+            <div class="code-header">Main.java</div>
+            <div class="code-content">public static void main(String[] args) {
+    CatFactory maineCoonFactory = CatFactoryHelper.getFactory(CatFactoryHelper.Breed.MAINE_COON);
+    NinjaCat maineCoonNinjaCat = maineCoonFactory.createNinjaCat();
+    maineCoonNinjaCat.sneak();
+}</div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Team:</strong> Andre Maxinger & Nhi Duong</p>
+            <p><strong>Pattern:</strong> Abstract Factory</p>
+        </div>
+    </div>
+</body>
+</html>
