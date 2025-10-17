@@ -24,5 +24,24 @@ Unser Onepager ist "Memento_OnePager.pdf". In welchem das Grundprinzip, Einsatzg
 ```TextEditor: Text wiederhergestellt: Hallo```
 ```Caretaker: Kein Zustand zum Rückgängig machen.```
 
+## ***Builder*** - Katrin, Leonie, Daniel
 
+
+<table>
+<tr>
+<td style="vertical-align: top;">
+
+1.  Ordner "<b>Builder Pattern</b>" in IDE öffnen
+2.  Im Source Folder die Main Klasse auswählen
+3.  <strong><em>Optional:</em></strong> Lieblingskatze mit CatBuilder erstellen
+4.  Main methode ausführen
+5.  Das Katzenbild genießen 😻
+
+</td>
+<td style="vertical-align: top;">
+<img src="https://i.pinimg.com/474x/c9/37/0b/c9370b56dda66f84f228dd49d73cd0ce--ginger-kitten-ginger-cats.jpg" 
+     alt="Süße Mietzekatze" width="300"/>
+</td>
+</tr>
+</table>
 

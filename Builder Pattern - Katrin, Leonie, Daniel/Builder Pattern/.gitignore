@@ -1,0 +1,26 @@
+# Build-Ordner (z. B. Klassen-Dateien)
+bin/
+out/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# Logs & temporäre Dateien
+*.log
+*.tmp
+*.swp
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
