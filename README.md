@@ -1,29 +1,28 @@
-# Design Pattern Aufgabe (5 Punkte)
+# Design Pattern Aufgabe (5 Punkte) - Memento von Christina & Lea
 
-## Ziel der Aufgabe
-Du implementierst zu zweit ein Design Pattern und entwickelst ein Plakat oder einen OnePager dazu. 
+## Onepager der Aufgabe
+Unser Onepager ist "Memento_OnePager.pdf". In welchem das Grundprinzip, Einsatzgebiete, Vor und Nachteile sowie ein Beispiel enthalten sind
 
-<img width="1549" height="416" alt="image" src="https://github.com/user-attachments/assets/7f1b007f-59c4-44a2-bacc-714f91ae64b6" />
+## TypeScript Codebeispiel
+- Idee: Memento Pattern mit Klassen Caretaker, Memento & Texteditor (Originator) am Beispiel eines Texteditors zeigen
+- Wie man das Beispiel ausführt: 
+    1. ```npm install```
+    2. ```tsc index.ts``` -> generiert js datei
+    2. ```node index.js``` -> die generierte js datei ausführen
 
-## Abgabe
-Die Abgabe erfolgt bis zum 16.10.2025 um 20:00 als Pull-Request an diesem GitHub-Repository
-
-## Anforderungen
-Code: Funktionierendes, lauffähiges Beispiel des Patterns. In der README.md bitte angeben, wie man die Anwendung startet.
-
-OnePager/Plakat:
-- Steckbrief (Name, Art, etc.)
-- Vorteile / Nachteile
-- Einsatzgebiete
-- Warum existiert das Pattern?
-- Code-Beispiel (Auszüge bzw. das, was wichtig ist)
-
-## Ablauf
-1. Fork anlegen
-2. Ordner mit euren Namen anlegen
-3. In eurem ordner ein lauffähiges Beispiel implementieren
-4. In die README.md schreiben, wie ich das Beispiel ausführen kann (z.B. "node index.js" für eine einfache JS-Datei)
-5. Auch den OnePager in eurem Ordner ablegen
+- gewünschte Ausgabe im Terminal bei Ausführung:
+```TextEditor: aktueller Text: Hallo```
+```Caretaker: Zustand speichern...```
+```TextEditor: Zustand wird gespeichert...```
+```TextEditor: aktueller Text: Hallo Welt```
+```Caretaker: Zustand speichern...```
+```TextEditor: Zustand wird gespeichert...```
+```TextEditor: aktueller Text: Hallo Welt!!!```
+```Caretaker: Letzte Änderung rückgängig...```
+```TextEditor: Text wiederhergestellt: Hallo Welt```
+```Caretaker: Letzte Änderung rückgängig...```
+```TextEditor: Text wiederhergestellt: Hallo```
+```Caretaker: Kein Zustand zum Rückgängig machen.```
 
 ## ***Builder*** - Katrin, Leonie, Daniel
 
@@ -45,3 +44,4 @@ OnePager/Plakat:
 </td>
 </tr>
 </table>
+
